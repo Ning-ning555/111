@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .centered-content {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .main_pic img {
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .main_pic {
+            position: relative;
+            height: 300px;
+            /* 示例高度 */
+            /* 确保子元素不会超出 */
+        }
+
+        .report {
+            position: absolute;
+            top: 90%;
+            /* 根据需要调整 */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* 使 report 垂直水平居中 */
+            border: 1px solid gray;
+            border-radius: 10px;
+        }
+
+        .enter2 {
+            position: absolute;
+            top: 80%;
+            /* 与 report 一致 */
+            left: 50%;
+            /* 与 report 一致 */
+            transform: translate(-50%, -50%);
+            /* 使 enter2 垂直水平居中 */
+            width: 1000px;
+            /* 设置宽度 */
+            height: 200px;
+            /* 设置高度 */
+            background: transparent;
+            /* 透明背景 */
+            border: none;
+            /* 去掉边框 */
+            cursor: pointer;
+            /* 鼠标悬停时显示指针 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main_pic centered-content">
+        <img class="bac_img" src="images/bf6ca2e080df82c0daedf7dc68f5c6e.jpg" alt="">
+        <img class="report" src="images/8bbea8a31c988a1926c1f9a9665aa38.jpg" alt="">
+        <button class="enter2" onclick="window.location.href='index3.html'"></button>
+    </div>
+</body>
+
+</html>

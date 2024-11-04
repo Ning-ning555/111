@@ -1,58 +1,167 @@
-html
-	<!DOCTYPE html>  
+<!DOCTYPE html>
+<html lang="zh-CN">
 
-	<html lang="zh-CN">  
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		body {
+			background-image: linear-gradient(to bottom, rgb(164, 189, 243) 10%, #fff 90%);
+			margin: 0;
+			padding: 0;
+		}
 
-	<head>  
+		.centered-content {
+			width: 80%;
+			margin: 0 auto;
+		}
 
-	    <meta charset="UTF-8">  
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px 0;
+		}
 
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+		.search {
+			width: 80%;
+			display: flex;
+			align-items: center;
+			background-color: #fff;
+			border: 1px solid gray;
+			border-radius: 5px;
+			height: 35px;
+		}
 
-	    <title>手机网站示例</title>  
+		.search_pic img {
+			width: 22px;
+			height: 22px;
+			margin-right: 10px;
+		}
 
-	    <link rel="stylesheet" href="styles.css">  
+		.search_input {
+			flex: 1;
+			font-size: 15px;
+			color: rgb(87, 87, 87);
+			background-color: transparent;
+			border: none;
+			outline: none;
+			box-shadow: none;
+		}
 
-	</head>  
+		.message img {
+			width: 30px;
+		}
 
-	<body>  
+		.adv img,
+		.choose1 img,
+		.choose3 img,
+		.person img {
+			display: block;
+			margin: 0 auto;
+			max-width: 100%;
+			height: auto;
 
-	    <header>  
+		}
 
-	        <nav>  
+		.adv img {
+			margin-bottom: 20px;
+		}
 
-	            <ul>  
+		.choose1 img {
+			/* border: 2px solid gray; */
+			border-radius: 15px;
+			margin-bottom: 20px;
+		}
 
-	                <li><a href="#home">首页</a></li>  
+		.choose2_1 img {
+			width: 49%;
 
-	                <li><a href="#about">关于我们</a></li>  
+			/* border: 1px solid gray; */
+			border-radius: 10px;
+		}
 
-	                <li><a href="#contact">联系我们</a></li>  
+		.choose2 {
+			display: block;
+			height: auto;
+			margin-bottom: 30px;
 
-	            </ul>  
+		}
 
-	        </nav>  
+		.choose2_1_1 {
+			float: left;
+		}
 
-	    </header>  
+		.choose2_1_2 {
+			float: right;
+		}
 
-	    <main>  
+		.person {
+			margin-top: 150px;
 
-	        <h1>欢迎来到我们的手机网站</h1>  
+		}
 
-	        <p>这是一个简单的手机网站示例。</p>  
+		.person img {
+			margin-top: 30px;
+			border-radius: 5px;
+			border: 2px solid rgb(110, 145, 249);
+		}
 
-	        <button id="alertButton">点击我</button>  
+		.choose3 img {
+			position: relative;
+			z-index: -1;
+		}
 
-	    </main>  
+		.choose3 {
+			margin-top: 10px;
+			height: auto;
+			position: relative;
+			/* 添加这一行 */
+		}
 
-	    <footer>  
+		.choose3 button {
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			left: 52%;
+			/* 可能需要调整这个值 */
+			bottom: 10%;
+			/* 或者您想要的任何距离，但注意它是相对于 .choose3 的底部 */
+			z-index: 10;
+			background-color: transparent;
+			border: 0;
+		}
+	</style>
+</head>
 
-	        <p>&copy; 2023 手机网站示例</p>  
+<body>
+	<div class="header centered-content">
+		<div class="search">
+			<span class="search_pic"><img src="images/搜索.png" alt="搜索图标"></span>
+			<input type="text" class="search_input" placeholder="搜索医生、护士、科室">
+		</div>
+		<span class="message"><img src="images/聊天气泡.png" alt="消息图标"></span>
+	</div>
+	<div class="adv centered-content"><img src="images/c6a2bdd3a7f798315a17d86d656009f.jpg" alt="广告图片"></div>
+	<div class="choose1 centered-content"><img src="images\7f40c2a67c0c3ab105ca402640511b7.jpg" alt="选择图片"></div>
+	<div class="choose2">
+		<div class="choose2_1 centered-content">
+			<div><img class="choose2_1_1" src="images\19976c7a738393b261f680277b6b7c7.png" alt=""><img
+					class="choose2_1_2" src="images\42c7eed79f62c559268f1225ce705d0.png" alt=""></div>
+		</div>
+		<div class="choose2_1 centered-content">
+			<div><img class="choose2_1_1" src="images\ac1933a25ef61fbac2e8dbd132180fc.png" alt=""><img
+					class="choose2_1_2" src="images\bbbb366e8f2e606fb775c297bf46a5d.png" alt=""></div>
+		</div>
+	</div>
+	<div class="person centered-content">
+		<img src="images\42644ab314ead8cff0b90ccfcafdd08.jpg" alt="">
+	</div>
+	<div class="choose3 centered-content">
+		<img src="images\dc1035bfad7e93ffa94a7720acf41c0.png" alt="">
+		<button class="enter" onclick="window.location.href='index2.html'"></button>
+	</div>
+</body>
 
-	    </footer>  
-
-	    <script src="scripts.js"></script>  
-
-	</body>  
-
-	</html>
+</html>
