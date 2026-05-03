@@ -2,166 +2,319 @@
 <html lang="zh-CN">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title></title>
-	<style>
-		body {
-			background-image: linear-gradient(to bottom, rgb(164, 189, 243) 10%, #fff 90%);
-			margin: 0;
-			padding: 0;
-		}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>交管 12123 - 预览</title>
+        <style>
+                body {
+                        background-image: linear-gradient(to bottom, rgb(164, 189, 243) 10%, #fff 90%);
+                        margin: 0;
+                        padding: 0;
+                }
 
-		.centered-content {
-			width: 90%;
-			margin: 0 auto;
-		}
+                .centered-content {
+                        width: 90%;
+                        max-width: 450px;
+                        margin: 0 auto;
+                }
 
-		.header {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 20px 0;
-		}
+                .header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 20px 0;
+                }
 
-		.search {
-			width: 80%;
-			display: flex;
-			align-items: center;
-			background-color: #fff;
-			border: 1px solid gray;
-			border-radius: 5px;
-			height: 35px;
-		}
+                .search {
+                        width: 80%;
+                        display: flex;
+                        align-items: center;
+                        background-color: #fff;
+                        border: 1px solid gray;
+                        border-radius: 5px;
+                        height: 35px;
+                }
 
-		.search_pic img {
-			width: 22px;
-			height: 22px;
-			margin-right: 10px;
-		}
+                .search_pic img {
+                        width: 22px;
+                        height: 22px;
+                        margin-right: 10px;
+                }
 
-		.search_input {
-			flex: 1;
-			font-size: 15px;
-			color: rgb(87, 87, 87);
-			background-color: transparent;
-			border: none;
-			outline: none;
-			box-shadow: none;
-		}
+                .search_input {
+                        flex: 1;
+                        font-size: 15px;
+                        color: rgb(87, 87, 87);
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        box-shadow: none;
+                }
 
-		.message img {
-			width: 30px;
-		}
+                .message img {
+                        width: 30px;
+                }
 
-		.adv img,
-		.choose1 img,
-		.choose3 img,
-		.person img {
-			display: block;
-			margin: 0 auto;
-			max-width: 100%;
-			height: auto;
+                .adv img,
+                .choose1 img,
+                .choose3 img,
+                .person img {
+                        display: block;
+                        margin: 0 auto;
+                        max-width: 100%;
+                        height: auto;
 
-		}
+                }
 
-		.adv img {
-			margin-bottom: 20px;
-		}
+                .adv img {
+                        margin-bottom: 20px;
+                }
 
-		.choose1 img {
-			/* border: 2px solid gray; */
-			border-radius: 15px;
-			margin-bottom: 20px;
-		}
+                .choose1 img {
+                        border-radius: 15px;
+                        margin-bottom: 20px;
+                }
 
-		.choose2_1 img {
-			width: 49%;
+                .choose2_1 img {
+                        width: 49%;
+                        border-radius: 10px;
+                }
 
-			/* border: 1px solid gray; */
-			border-radius: 10px;
-		}
+                .choose2 {
+                        display: block;
+                        height: auto;
+                        margin-bottom: 30px;
 
-		.choose2 {
-			display: block;
-			height: auto;
-			margin-bottom: 30px;
+                }
 
-		}
+                .choose2_1_1 {
+                        float: left;
+                }
 
-		.choose2_1_1 {
-			float: left;
-		}
+                .choose2_1_2 {
+                        float: right;
+                }
 
-		.choose2_1_2 {
-			float: right;
-		}
+                .person {
+                        margin-top: 150px;
 
-		.person {
-			margin-top: 150px;
+                }
 
-		}
+                .person img {
+                        margin-top: 30px;
+                        border-radius: 5px;
+                        border: 2px solid rgb(110, 145, 249);
+                }
 
-		.person img {
-			margin-top: 30px;
-			border-radius: 5px;
-			border: 2px solid rgb(110, 145, 249);
-		}
+                .choose3 img {
+                        position: relative;
+                        z-index: -1;
+                }
 
-		.choose3 img {
-			position: relative;
-			z-index: -1;
-		}
+                .choose3 {
+                        margin-top: 10px;
+                        height: auto;
+                        position: relative;
+                }
 
-		.choose3 {
-			margin-top: 10px;
-			height: auto;
-			position: relative;
-			/* 添加这一行 */
-		}
+                .choose3 button {
+                        width: 100px;
+                        height: 100px;
+                        position: absolute;
+                        left: 52%;
+                        bottom: 10%;
+                        z-index: 10;
+                        background-color: transparent;
+                        border: 0;
+                }
 
-		.choose3 button {
-			width: 100px;
-			height: 100px;
-			position: absolute;
-			left: 52%;
-			/* 可能需要调整这个值 */
-			bottom: 10%;
-			/* 或者您想要的任何距离，但注意它是相对于 .choose3 的底部 */
-			z-index: 10;
-			background-color: transparent;
-			border: 0;
-		}
-	</style>
+                /* 驾驶证电子版页面样式 */
+                .license-page {
+                        display: none;
+                        padding: 20px 0;
+                }
+
+                .license-page.active {
+                        display: block;
+                }
+
+                .license-header {
+                        text-align: center;
+                        padding: 15px 0;
+                        background: linear-gradient(135deg, #1e88e5, #1565c0);
+                        color: white;
+                        border-radius: 10px;
+                        margin-bottom: 20px;
+                }
+
+                .license-card {
+                        background: linear-gradient(135deg, #64b5f6, #1976d2);
+                        border-radius: 15px;
+                        padding: 20px;
+                        color: white;
+                        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                        margin-bottom: 20px;
+                }
+
+                .license-card .name {
+                        font-size: 24px;
+                        font-weight: bold;
+                        margin-bottom: 15px;
+                }
+
+                .license-card .info-row {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 10px;
+                        font-size: 14px;
+                }
+
+                .license-card .info-label {
+                        opacity: 0.8;
+                }
+
+                .license-card .info-value {
+                        font-weight: bold;
+                }
+
+                .nav-tabs {
+                        display: flex;
+                        justify-content: center;
+                        gap: 10px;
+                        margin-bottom: 20px;
+                }
+
+                .nav-tab {
+                        padding: 10px 20px;
+                        background-color: #fff;
+                        border: 2px solid #1976d2;
+                        border-radius: 20px;
+                        cursor: pointer;
+                        font-size: 14px;
+                }
+
+                .nav-tab.active {
+                        background-color: #1976d2;
+                        color: white;
+                }
+
+                .back-btn {
+                        display: inline-block;
+                        padding: 10px 20px;
+                        background-color: #1976d2;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        margin-bottom: 20px;
+                }
+        </style>
 </head>
 
 <body>
-	<div class="header centered-content">
-		<div class="search">
-			<span class="search_pic"><img src="images/搜索.png" alt="搜索图标"></span>
-			<input type="text" class="search_input" placeholder="搜索医生、护士、科室">
-		</div>
-		<span class="message"><img src="images/聊天气泡.png" alt="消息图标"></span>
-	</div>
-	<div class="adv centered-content"><img src="images/c6a2bdd3a7f798315a17d86d656009f.jpg" alt="广告图片"></div>
-	<div class="choose1 centered-content"><img src="images\7f40c2a67c0c3ab105ca402640511b7.jpg" alt="选择图片"></div>
-	<div class="choose2">
-		<div class="choose2_1 centered-content">
-			<div><img class="choose2_1_1" src="images\19976c7a738393b261f680277b6b7c7.png" alt=""><img
-					class="choose2_1_2" src="images\42c7eed79f62c559268f1225ce705d0.png" alt=""></div>
-		</div>
-		<div class="choose2_1 centered-content">
-			<div><img class="choose2_1_1" src="images\ac1933a25ef61fbac2e8dbd132180fc.png" alt=""><img
-					class="choose2_1_2" src="images\bbbb366e8f2e606fb775c297bf46a5d.png" alt=""></div>
-		</div>
-	</div>
-	<div class="person centered-content">
-		<img src="images\42644ab314ead8cff0b90ccfcafdd08.jpg" alt="">
-	</div>
-	<div class="choose3 centered-content">
-		<img src="images\dc1035bfad7e93ffa94a7720acf41c0.png" alt="">
-		<button class="enter" onclick="window.location.href='index2.html'"></button>
-	</div>
+        <!-- 主页 -->
+        <div id="main-page">
+                <div class="header centered-content">
+                        <div class="search">
+                                <span class="search_pic"><img src="images/搜索.png" alt="搜索图标"></span>
+                                <input type="text" class="search_input" placeholder="搜索医生、护士、科室">
+                        </div>
+                        <span class="message"><img src="images/聊天气泡.png" alt="消息图标"></span>
+                </div>
+                <div class="adv centered-content"><img src="images/c6a2bdd3a7f798315a17d86d656009f.jpg" alt="广告图片"></div>
+                <div class="choose1 centered-content"><img src="images/7f40c2a67c0c3ab105ca402640511b7.jpg" alt="选择图片"></div>
+                <div class="choose2">
+                        <div class="choose2_1 centered-content">
+                                <div><img class="choose2_1_1" src="images/19976c7a738393b261f680277b6b7c7.png" alt=""><img
+                                                class="choose2_1_2" src="images/42c7eed79f62c559268f1225ce705d0.png" alt=""></div>
+                        </div>
+                        <div class="choose2_1 centered-content">
+                                <div><img class="choose2_1_1" src="images/ac1933a25ef61fbac2e8dbd132180fc.png" alt=""><img
+                                                class="choose2_1_2" src="images/bbbb366e8f2e606fb775c297bf46a5d.png" alt=""></div>
+                        </div>
+                </div>
+                <div class="person centered-content">
+                        <img src="images/42644ab314ead8cff0b90ccfcafdd08.jpg" alt="">
+                </div>
+                <div class="choose3 centered-content">
+                        <img src="images/dc1035bfad7e93ffa94a7720acf41c0.png" alt="">
+                        <button class="enter" onclick="showLicensePage()"></button>
+                </div>
+        </div>
+
+        <!-- 机动车驾驶证电子版页面 -->
+        <div id="license-page" class="license-page centered-content">
+                <button class="back-btn" onclick="showMainPage()">← 返回</button>
+                
+                <div class="nav-tabs">
+                        <div class="nav-tab active" onclick="switchTab(this, 'driving')">驾驶证电子版</div>
+                        <div class="nav-tab" onclick="switchTab(this, 'vehicle')">机动车电子版</div>
+                </div>
+
+                <div class="license-header">
+                        <h2>中华人民共和国机动车驾驶证</h2>
+                        <p>Driving License of the People's Republic of China</p>
+                </div>
+
+                <div class="license-card">
+                        <div class="name">吴小海</div>
+                        <div class="info-row">
+                                <span class="info-label">证号</span>
+                                <span class="info-value">130283198809297054</span>
+                        </div>
+                        <div class="info-row">
+                                <span class="info-label">性别</span>
+                                <span class="info-value">男</span>
+                        </div>
+                        <div class="info-row">
+                                <span class="info-label">国籍</span>
+                                <span class="info-value">中国/CHN</span>
+                        </div>
+                        <div class="info-row">
+                                <span class="info-label">出生日期</span>
+                                <span class="info-value">1988-09-29</span>
+                        </div>
+                        <div class="info-row">
+                                <span class="info-label">初次领证日期</span>
+                                <span class="info-value">2012-07-31</span>
+                        </div>
+                        <div class="info-row">
+                                <span class="info-label">准驾车型</span>
+                                <span class="info-value">C1</span>
+                        </div>
+                        <div class="info-row">
+                                <span class="info-label">有效期</span>
+                                <span class="info-value">2018-07-31 至 长期</span>
+                        </div>
+                        <div class="info-row">
+                                <span class="info-label">档案编号</span>
+                                <span class="info-value">130202209646</span>
+                        </div>
+                </div>
+
+                <div style="text-align: center; color: #666; font-size: 12px; margin-top: 20px;">
+                        <p>生成时间：<span id="current-time"></span></p>
+                        <p>本电子证照与实体证照具有同等法律效力</p>
+                </div>
+        </div>
+
+        <script>
+                function showLicensePage() {
+                        document.getElementById('main-page').style.display = 'none';
+                        document.getElementById('license-page').classList.add('active');
+                        document.getElementById('current-time').textContent = new Date().toLocaleString('zh-CN');
+                }
+
+                function showMainPage() {
+                        document.getElementById('license-page').classList.remove('active');
+                        document.getElementById('main-page').style.display = 'block';
+                }
+
+                function switchTab(tab, type) {
+                        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                        tab.classList.add('active');
+                }
+        </script>
 </body>
 
 </html>

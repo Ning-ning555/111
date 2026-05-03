@@ -1,0 +1,30 @@
+version: 2.9.0
+apkFileName: zhang.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+  tag: null
+sdkInfo:
+  minSdkVersion: 21
+  targetSdkVersion: 28
+packageInfo:
+  forcedPackageId: 127
+  renameManifestPackage: null
+versionInfo:
+  versionCode: 100
+  versionName: 1.0.0
+resourcesAreCompressed: false
+sharedLibrary: false
+sparseResources: false
+unknownFiles:
+  androidsupportmultidexversion.txt: 0
+  dc/squareup/okhttp3/internal/publicsuffix/publicsuffixes.gz: 0
+  io/dcloud/all.js: 8
+  io/dcloud/uni-app-service.js: 8
+  io/dcloud/weexUniJs.js: 8
+doNotCompress:
+- resources.arsc
+- png
+- gif
+- ogg
